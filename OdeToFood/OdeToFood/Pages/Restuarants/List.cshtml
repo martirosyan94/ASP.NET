@@ -4,6 +4,11 @@
 }
 <h1>Restuarants</h1>
 
+<form>
+    <input asp-for="SearchTerm" />
+    <button> Search </button>
+</form>
+
 <table class="table">
     @foreach (var restuarant in Model.Restuarants)
     {
@@ -17,7 +22,10 @@
             <td>
                 @restuarant.Cousine
             </td>
-
+            <td>
+                <a asp-page="./Detail"
+               asp-route-restuarantId=@restuarant.Id>Show details</a>
+            </td>
         </tr>
     }
 </table>
